@@ -1,6 +1,7 @@
 package A03_DoubleLinkedList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -20,7 +21,6 @@ public class TestDoubleLinkedList {
 		assertEquals("vier", dll.next().getAusrede());
 		assertNull(dll.next());
 	}
-
 
 	@Test
 	public void previous() {
@@ -56,22 +56,22 @@ public class TestDoubleLinkedList {
 		dll.add(new Ausrede("zwei"));
 		assertEquals("zwei", dll.getLast().getData().getAusrede());
 	}
-	
-	@Test(expected=CurrentNotSetException.class)
+
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.getCurrent();
-	}	
+	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException2() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
 		dll.add(new Ausrede("zwei"));
 		dll.getCurrent();
-	}	
+	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException3() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -79,8 +79,8 @@ public class TestDoubleLinkedList {
 		dll.moveNext();
 		dll.getCurrent();
 	}
-	
-	@Test(expected=CurrentNotSetException.class)
+
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException4() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -89,7 +89,7 @@ public class TestDoubleLinkedList {
 		dll.getCurrent();
 	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException5() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -99,7 +99,7 @@ public class TestDoubleLinkedList {
 		dll.getCurrent();
 	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void getCurrentException6() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -107,7 +107,7 @@ public class TestDoubleLinkedList {
 		dll.resetToLast();
 		dll.moveNext();
 		dll.getCurrent();
-	}	
+	}
 
 	@Test
 	public void moveAndGetCurrent() throws CurrentNotSetException {
@@ -135,8 +135,7 @@ public class TestDoubleLinkedList {
 		assertEquals("zwei", dll.getCurrent().getAusrede());
 	}
 
-	
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void removeException() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -150,7 +149,7 @@ public class TestDoubleLinkedList {
 		dll.remove(2);
 		dll.getCurrent();
 	}
-	
+
 	@Test
 	public void remove() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
@@ -189,14 +188,14 @@ public class TestDoubleLinkedList {
 		dll.movePrevious();
 		assertEquals("zwei", dll.getCurrent().getAusrede());
 	}
-	
-	@Test(expected=CurrentNotSetException.class)
+
+	@Test(expected = CurrentNotSetException.class)
 	public void removeCurrentException() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.removeCurrent();
 	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void removeCurrentException2() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -204,7 +203,7 @@ public class TestDoubleLinkedList {
 		dll.removeCurrent();
 	}
 
-	@Test(expected=CurrentNotSetException.class)
+	@Test(expected = CurrentNotSetException.class)
 	public void removeCurrentException3() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.add(new Ausrede("eins"));
@@ -257,13 +256,13 @@ public class TestDoubleLinkedList {
 		dll.removeCurrent();
 		assertEquals("zwei", dll.getCurrent().getAusrede());
 	}
-	
-	@Test(expected=CurrentNotSetException.class)
+
+	@Test(expected = CurrentNotSetException.class)
 	public void insertAfterCurrentAndMoveException() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
 		dll.insertAfterCurrentAndMove(new Ausrede("neu"));
 	}
-	
+
 	@Test
 	public void insertAfterCurrentAndMove() throws CurrentNotSetException {
 		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();

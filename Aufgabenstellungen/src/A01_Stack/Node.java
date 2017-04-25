@@ -3,6 +3,7 @@ package A01_Stack;
 public class Node<T> {
 
 	// Test das ist ein Test
+
 	private final T data;
 
 	private Node<T> next;
